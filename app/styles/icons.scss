@@ -1,0 +1,52 @@
+/* Material design icons extensions */
+.material-icons {
+  /* Rules for sizing the icon. */
+  &.md-18 { font-size: 18px; width: 18px; height: 18px; }
+  &.md-24 { font-size: 24px; width: 24px; height: 24px; }
+  &.md-36 { font-size: 36px; width: 36px; height: 36px; }
+  &.md-44 { font-size: 44px; width: 44px; height: 44px; }
+  &.md-48 { font-size: 48px; width: 48px; height: 48px; }
+  &.md-112 { font-size: 112px; width: 112px; height: 112px; }
+  &.md-200 { font-size: 200px; width: 200px; height: 200px; }
+
+  /* Rules for using icons as black on a light background. */
+  &.md-dark { color: rgba(0, 0, 0, 0.54); }
+  &.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+  /* Rules for using icons as white on a dark background. */
+  &.md-light { color: rgba(255, 255, 255, 1); }
+  &.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+  /* Rules for decorating icon with animations */
+  &.md-spin {
+    -webkit-animation: md-spin 2s infinite linear;
+    animation: md-spin 2s infinite linear;
+  }
+
+  &.md-pulse {
+    -webkit-animation: md-spin 1s infinite steps(8);
+    animation: md-spin 1s infinite steps(8);
+  }
+}
+
+@-webkit-keyframes md-spin {
+  0% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes md-spin {
+  0% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}

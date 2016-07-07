@@ -1,0 +1,29 @@
+[md-component-id="ds-main-menu"] {
+  & > md-content {
+    overflow-y: hidden;
+    margin-top: 0;
+
+    &:hover {
+      overflow-y: auto
+    }
+  }
+
+  md-list {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  md-content {
+    md-list {
+      overflow: hidden;
+    }
+  }
+
+  md-list-item {
+    &.active {
+      button {
+        background-color: rgba(0, 0, 0, 0.0980382);
+      }
+    }
+  }
+}

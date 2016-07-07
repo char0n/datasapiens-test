@@ -1,0 +1,87 @@
+<md-tabs flex layout="column" md-border-bottom md-swipe-content="false" md-stretch-tabs="auto"
+         style="min-height: 0">
+  <md-tab label="Balance" md-on-select="action()">
+    <md-content layout="column" flex md-scroll-y>
+      <md-list>
+        <md-list-item>
+          <p layout="row">
+            Total
+            <span flex></span>
+            <span md-colors="{color: dsSpendings.stats.total < 0 ? 'red-400' : 'green-400'}">{{ dsSpendings.stats.total | currency:"$" }}</span>
+          </p>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item>
+          <p layout="row">
+            Today
+            <span flex></span>
+            <span md-colors="{color: dsSpendings.stats.today < 0 ? 'red-400' : 'green-400'}">{{ dsSpendings.stats.today | currency:"$" }}</span>
+          </p>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item>
+          <p layout="row">
+            This week
+            <span flex></span>
+            <span md-colors="{color: dsSpendings.stats.today < 0 ? 'red-400' : 'green-400'}">{{ dsSpendings.stats.week | currency:"$" }}</span>
+          </p>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item>
+          <p layout="row">
+            This month
+            <span flex></span>
+            <span md-colors="{color: dsSpendings.stats.today < 0 ? 'red-400' : 'green-400'}">{{ dsSpendings.stats.month | currency:"$" }}</span>
+          </p>
+        </md-list-item>
+        <md-divider></md-divider>
+      </md-list>
+
+      <br />
+
+      <section style="width: 500px; height: 600px;">
+        <h4 layout-margin>Current week</h4>
+        <canvas class="chart chart-bar"
+                chart-data="dsSpendings.state.chart.data"
+                chart-labels="dsSpendings.state.chart.labels"></canvas>
+      </section>
+
+    </md-content>
+  </md-tab>
+
+  <md-tab label="Weekly reports">
+    <md-content layout="column" flex md-scroll-y>
+      <md-list>
+        <md-list-item ng-repeat-start="week in dsSpendings.state.weeks">
+          <p layout="row">
+            {{ week.start | mdDatetime }} - {{ week.end | mdDatetime }}
+            <span flex></span>
+            <span md-colors="{color: week.amount < 0 ? 'red-400' : 'green-400'}">{{ week.amount | currency:"$" }}</span>
+          </p>
+        </md-list-item>
+        <md-divider ng-repeat-end></md-divider>
+      </md-list>
+    </md-content>
+  </md-tab>
+
+  <md-tab label="Categories">
+    <md-content layout="column" flex md-scroll-y>
+      <md-list>
+        <article ng-repeat="item in dsSpendings.state.entries">
+          <md-subheader class="md-primary" ng-if="item.type === 'category'">{{ item.entity.name }}</md-subheader>
+          <md-list-item class="md-2-line" ng-if="item.type === 'entry'">
+            <div class="md-list-item-text">
+              <h3>{{ item.entity.name }}</h3>
+              <p layout="row">
+                {{ item.entity.created | mdDatetime }}
+                <span flex></span>
+                <span md-colors="{color: item.entity.amount < 0 ? 'red-400' : 'green-400'}">{{ item.entity.amount | currency:"$" }}</span>
+              </p>
+            </div>
+          </md-list-item>
+          <md-divider ng-repeat-end></md-divider>
+        </article>
+      </md-list>
+    </md-content>
+  </md-tab>
+</md-tabs>

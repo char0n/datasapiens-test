@@ -1,0 +1,42 @@
+md-list-item.tz-time {
+  ._md-list-item-inner {
+    max-width: 86% !important;
+  }
+
+  ._md-secondary-container {
+    position: relative;
+    min-width: 46px;
+
+    & > time  {
+      @extend .md-caption;
+      width: 55px;
+      text-align: right;
+      overflow: visible;
+
+      &.tz-secondary-top {
+        position: absolute;
+        top: 2px;
+        right: 8px;
+      }
+    }
+
+    & > time.tz-secondary-top ~ * {
+      margin-top: 40px !important;
+    }
+  }
+
+  &:not(.md-3-line) {
+    ._md-secondary-container {
+      & > time {
+        &.tz-secondary-top {
+          top: -7px;
+        }
+      }
+
+      & > time.tz-secondary-top ~ * {
+        margin-top: 13px !important;
+      }
+    }
+
+  }
+}

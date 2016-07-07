@@ -1,0 +1,17 @@
+<md-sidenav flex="none" class="md-sidenav-left" md-whiteframe="4"
+            md-is-open="true"
+            md-is-locked-open="true" md-component-id="ds-main-menu">
+
+  <md-content flex md-scroll-y>
+    <md-list>
+      <md-list-item ng-click="dsMainMenu.navigateToPersonalSpendings()" ng-class="{'active': dsMainMenu.activeMenuItem === 'personal'}">
+        <md-icon>person</md-icon>
+        <p>Personal spendings</p>
+      </md-list-item>
+      <md-list-item ng-click="dsMainMenu.navigateToFamilySpendings()" ng-class="{'active': dsMainMenu.activeMenuItem === 'family'}">
+        <md-icon>group</md-icon>
+        <p>Family spendings</p>
+      </md-list-item>
+    </md-list>
+  </md-content>
+</md-sidenav>

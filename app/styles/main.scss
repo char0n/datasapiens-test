@@ -1,0 +1,12 @@
+@import '../../node_modules/angular-material/modules/scss/angular-material';
+@import '../../node_modules/angular-material/modules/layouts/angular-material.layouts.ie_fixes.css';
+
+@import '../../app/src/shared/components/ds-main-menu.directive';
+
+@import './icons';
+@import './scrollbar';
+@import './forms';
+@import './extensions/md-list-item-time';
+
+.md-float-right { float: right }
+
