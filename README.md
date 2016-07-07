@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-You need to have `Node.js` server and with `npm` (node package manager) version 3 and above. You can just install new stable version of Node.js(^5) that came with new version of npm(^3).
+You need to have `Node.js` server and with `npm` (node package manager) version 3 and above. You can just install new stable version of Node.js(^6) that came with new version of npm(^3).
 
 
 ## Installation
@@ -31,7 +31,7 @@ You can use `NODE_ENV` variable inside of your Javascript code to access actual 
 
 > Build script bundles and compresses all js, html templates, css and small images(as BASE64). Then copyies all necessary files into `./dist` folder. For production simply copy contents of distribution folder into your server root direcotry.  
 
-> `npm run porod-server` - run server with production assets from `./dist` folder, this is mostly for testing purposes.
+> `npm run serve-dist` - run server with production assets from `./dist` folder, this is mostly for testing purposes.
 
 ## Coding Stuff
 Use `"ngInject";` in the begginging of each angular controller function that uses dependency injection pattern. Otherwise uglified production code wont work. This declaration automatically injects all dependencies with `$inject` Property Annotation - ng-annotate(-loader) will take care of that.
